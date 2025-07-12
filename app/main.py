@@ -13,29 +13,16 @@ app = FastAPI(
 )
 
 # Load model khi khởi động
-# Determine base directory (where this file lives)
-BASE_DIR = Path(__file__).resolve().parent
-
-# Name of your file
 MODEL_NAME = "transaction_classifier.pkl"
-
-# Default to /app/models/..., overrideable by ENV
-MODEL_PATH = Path(os.getenv("MODEL_PATH", BASE_DIR/ MODEL_NAME))
-
-print(f"Looking for model at: {MODEL_PATH}")
-
-# Initialize your classifier
+MODEL_PATH = MODEL_NAME
+print(MODEL_PATH)
 classifier = TransactionClassifier()
 
-# Startup: load the model once
 try:
-    classifier.load(str(MODEL_PATH))
+    classifier.load(MODEL_PATH)
     print(f"✅ Model loaded successfully from {MODEL_PATH}")
-except FileNotFoundError:
-    print(f"❌ Model file not found: {MODEL_PATH}")
-    classifier = None
 except Exception as e:
-    print(f"❌ Error loading model: {e}")
+    print(f"Error loading model: {e}")
     classifier = None
 
 
