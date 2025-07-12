@@ -15,7 +15,7 @@ COPY . .
 # Thêm dòng này trước CMD
 ENV PYTHONPATH=/app
 # # Set environment variables
-ENV MODEL_PATH=/app/transaction_classifier.pkl
+# ENV MODEL_PATH=/app/transaction_classifier.pkl
 
 # Expose port
 EXPOSE 8080
