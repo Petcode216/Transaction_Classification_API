@@ -14,7 +14,7 @@ app = FastAPI(
 
 # Load model khi khởi động
 MODEL_NAME = "transaction_classifier.pkl"
-MODEL_PATH = "models/" + MODEL_NAME
+MODEL_PATH = MODEL_NAME
 print(MODEL_PATH)
 classifier = TransactionClassifier()
 
