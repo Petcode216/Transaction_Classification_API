@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent
 MODEL_NAME = "transaction_classifier.pkl"
 
 # Default to /app/models/..., overrideable by ENV
-MODEL_PATH = Path(os.getenv("MODEL_PATH", BASE_DIR / "models" / MODEL_NAME))
+MODEL_PATH = Path(os.getenv("MODEL_PATH", BASE_DIR/ MODEL_NAME))
 
 print(f"Looking for model at: {MODEL_PATH}")
 
