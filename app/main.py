@@ -31,7 +31,7 @@ class TransactionRequest(BaseModel):
 
 class TransactionResponse(BaseModel):
     category: str
-    amount: str
+    amount: int
     confidence: float
 
 # Health check endpoint
